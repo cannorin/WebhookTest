@@ -1,0 +1,3 @@
+[submodule "CoreTweet-dev"]
+	path = CoreTweet-dev
+	url = git@github.com:CoreTweet/CoreTweet
