@@ -93,7 +93,7 @@ let listeningPortOpt =
   commandOption {
     names ["port"; "p"]
     description "set the port to listen (default: 8080)"
-    takes (format("%i").map(fun ip -> uint16 ip))
+    takes (format("%i").map(fun port -> uint16 port))
   } |> CommandOption.zeroOrExactlyOne
 
 let mainCmd =
