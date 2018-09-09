@@ -22,6 +22,12 @@ let mainPage session info =
             [
               a "/profile" [] <| text "Profile"
               a "/logout" []  <| text "Logout"
+              a "/webhook_test" [] <| text "Activate Webhook"
+            ]
+          | WebhookSession (token, webhook) -> 
+            [
+              a "/profile" [] <| text "Profile"
+              a "/webhook_test" [] <| text "Deactivate Webhook"
             ]
           | NoSession
           | AuthorizeSession _ -> [a "/twitter_login" [] <| text "Login"]
@@ -35,7 +41,7 @@ let profilePage session =
     ]
     body []  <|
       match session with
-        | TokensSession token -> 
+        | LoggedInSession token -> 
           let user = token.Account.VerifyCredentials()
           [
             p [] <| text (sprintf "%s (@%s)" user.Name user.ScreenName)
@@ -46,8 +52,7 @@ let profilePage session =
             hr []
             a "/" [] <| text "Home"
           ]
-        | NoSession
-        | AuthorizeSession _ ->
+        | GuestSession ->
           [
             a "/twitter_login" [] <| text "Please login"
           ]
