@@ -20,7 +20,7 @@ CS=<your Twitter app's consumer secret>
 ## Command options
 
 ```
-  --port, -p=<port>                   set the port to listen (default: 8080)
+  --port, -p=<port>                 set the port to listen (default: 8080)
   --ip, -i=<b>.<b>.<b>.<b>          set a IP address to bind the server (default: 127.0.0.1)
   --webhook-host, -w=<host>         set a hostname for receiving webhook, including http[s]:// (default: same as in --host)
   --host, -h=<host>                 set a hostname of this server, including http[s]:// (default: http://127.0.0.1:8080)
