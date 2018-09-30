@@ -15,6 +15,7 @@
     <Compile Include="Program.fs" />
     <PackageReference Include="FSharp.CommandLine" Version="2.0.6751.16478" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="ObjectDumper.NET" Version="2.0.18269.1-pre" />
     <ProjectReference Include="..\CoreTweetDevBuild\CoreTweetDevBuild.csproj" />
     <PackageReference Include="Suave" Version="2.4.3" />
     <PackageReference Include="Suave.Experimental" Version="2.5.0" />

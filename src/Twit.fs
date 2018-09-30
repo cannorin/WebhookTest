@@ -8,6 +8,7 @@ open CoreTweet.AccountActivity
 open Suave
 open Suave.Operators
 open Suave.Authentication
+open System.Diagnostics
 
 open Newtonsoft.Json
 open Newtonsoft.Json.Linq
@@ -121,7 +122,8 @@ let webhookReceive =
       if validate r payload then
         try
           let msg = ActivityEvent.Parse payload
-          printfn "* Incoming webhook of type: %A" msg.Type
+          ObjectDumper.Dump(msg, DumpStyle.Console)
+          |> printfn "* Incoming webhook:\n%s\n" 
         with
           | :? ParsingException as e ->
             printfn "[!] parsing exception: %A" e
